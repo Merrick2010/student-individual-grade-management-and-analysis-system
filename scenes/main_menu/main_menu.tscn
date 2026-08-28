@@ -1,0 +1,450 @@
+[gd_scene format=3 uid="uid://cbqgpovjkdaod"]
+
+[ext_resource type="Theme" uid="uid://w4gr7t2oljrj" path="res://resources/themes/ui.tres" id="1_fsom3"]
+[ext_resource type="Script" uid="uid://cs8n1bx0j50as" path="res://scenes/main_menu/main_menu.gd" id="1_ob46e"]
+[ext_resource type="Texture2D" uid="uid://bmohx8x0agsdw" path="res://resources/textures/star.png" id="2_0ebjn"]
+[ext_resource type="Curve" uid="uid://dw8qhy2mi8dv6" path="res://resources/curves/main_title.tres" id="2_wem23"]
+[ext_resource type="Shader" uid="uid://xs4vyjejnq30" path="res://resources/shaders/ranbow.gdshader" id="3_uqeha"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uqeha"]
+
+[node name="MainMenu" type="Node2D" unique_id=2627152]
+script = ExtResource("1_ob46e")
+main_title_curve = ExtResource("2_wem23")
+ranbow_shader = ExtResource("3_uqeha")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1411608188]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1026829529]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 1
+theme = ExtResource("1_fsom3")
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control" unique_id=781891177]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 154.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/CenterContainer" unique_id=665877657]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="LeftStar" type="TextureRect" parent="CanvasLayer/Control/CenterContainer/HBoxContainer" unique_id=733427587]
+layout_mode = 2
+texture = ExtResource("2_0ebjn")
+expand_mode = 2
+
+[node name="MainTitle" type="Label" parent="CanvasLayer/Control/CenterContainer/HBoxContainer" unique_id=2022198617]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_uqeha")
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "学生个人成绩管理分析系统"
+
+[node name="RightStar" type="TextureRect" parent="CanvasLayer/Control/CenterContainer/HBoxContainer" unique_id=1622600450]
+layout_mode = 2
+texture = ExtResource("2_0ebjn")
+expand_mode = 2
+
+[node name="Content" type="Control" parent="CanvasLayer/Control" unique_id=1786603985]
+anchors_preset = 0
+offset_left = 500.0
+offset_top = 200.0
+offset_right = 1200.0
+offset_bottom = 800.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/Content" unique_id=2114514038]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -200.0
+offset_right = -500.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 128
+
+[node name="VFlowContainer" type="VFlowContainer" parent="CanvasLayer/Control/Content/MarginContainer" unique_id=2079093927]
+layout_mode = 2
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+
+[node name="AddScore" type="Button" parent="CanvasLayer/Control/Content/MarginContainer/VFlowContainer" unique_id=2067163140]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+mouse_behavior_recursive = 2
+text = "添加成绩"
+
+[node name="CheckScore" type="Button" parent="CanvasLayer/Control/Content/MarginContainer/VFlowContainer" unique_id=324909068]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+mouse_behavior_recursive = 2
+text = "查询成绩"
+
+[node name="LatestScore" type="MarginContainer" parent="CanvasLayer/Control/Content" unique_id=889627844]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -200.0
+offset_right = -24.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 500
+theme_override_constants/margin_top = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Content/LatestScore" unique_id=1471942240]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer" unique_id=1178839148]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 0.53333336, 0.5529412, 1)
+text = "--- 最新成绩 ---"
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer" unique_id=1744058995]
+layout_mode = 2
+
+[node name="Date" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer" unique_id=709303577]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6392157, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "日期：%d 年 %d 月 %d 日"
+
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer" unique_id=1538095858]
+layout_mode = 2
+
+[node name="Classification" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer" unique_id=674057487]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.4117647, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "科目   ⭐   分数   ⭐   满分   ⭐   评级"
+
+[node name="ScoreInformations" type="HBoxContainer" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer" unique_id=149154052]
+layout_mode = 2
+theme_override_constants/separation = 140
+
+[node name="Subjects" type="VBoxContainer" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations" unique_id=848452119]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+
+[node name="Chinese" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Subjects" unique_id=31015280]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.5372549, 1)
+theme_override_font_sizes/font_size = 32
+text = "语文"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Math" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Subjects" unique_id=1390276365]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.5372549, 1)
+theme_override_font_sizes/font_size = 32
+text = "数学"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ForeignLanguage" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Subjects" unique_id=1205535125]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.5372549, 1)
+theme_override_font_sizes/font_size = 32
+text = "外语"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Physics" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Subjects" unique_id=2078660881]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7882353, 1, 0.6745098, 1)
+theme_override_font_sizes/font_size = 32
+text = "物理"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Chemist" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Subjects" unique_id=1515270722]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7882353, 1, 0.6745098, 1)
+theme_override_font_sizes/font_size = 32
+text = "化学"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Biology" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Subjects" unique_id=451272691]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7882353, 1, 0.6745098, 1)
+theme_override_font_sizes/font_size = 32
+text = "生物"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="History" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Subjects" unique_id=2124298901]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.39113033, 0.6530963, 1)
+theme_override_font_sizes/font_size = 32
+text = "历史"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Politics" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Subjects" unique_id=1195912964]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.39113033, 0.6530963, 1)
+theme_override_font_sizes/font_size = 32
+text = "政治"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Geography" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Subjects" unique_id=1771667038]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.39113033, 0.6530963, 1)
+theme_override_font_sizes/font_size = 32
+text = "地理"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scores" type="VBoxContainer" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations" unique_id=51380520]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+
+[node name="Chinese" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Scores" unique_id=1814512635]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.5372549, 1)
+theme_override_font_sizes/font_size = 32
+text = "%f"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Math" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Scores" unique_id=676191057]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.5372549, 1)
+theme_override_font_sizes/font_size = 32
+text = "%f"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ForeignLanguage" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Scores" unique_id=1516884809]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.5372549, 1)
+theme_override_font_sizes/font_size = 32
+text = "%f"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Physics" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Scores" unique_id=1187761762]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7882353, 1, 0.6745098, 1)
+theme_override_font_sizes/font_size = 32
+text = "%f"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Chemist" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Scores" unique_id=1095252433]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7882353, 1, 0.6745098, 1)
+theme_override_font_sizes/font_size = 32
+text = "%f"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Biology" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Scores" unique_id=889837328]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7882353, 1, 0.6745098, 1)
+theme_override_font_sizes/font_size = 32
+text = "%f"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="History" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Scores" unique_id=314507545]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.39113033, 0.6530963, 1)
+theme_override_font_sizes/font_size = 32
+text = "%f"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Politics" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Scores" unique_id=667903289]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.39113033, 0.6530963, 1)
+theme_override_font_sizes/font_size = 32
+text = "%f"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Geography" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Scores" unique_id=1610607602]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.39113033, 0.6530963, 1)
+theme_override_font_sizes/font_size = 32
+text = "%f"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MaxScores" type="VBoxContainer" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations" unique_id=250870728]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+
+[node name="Chinese" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/MaxScores" unique_id=195526401]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.5372549, 1)
+theme_override_font_sizes/font_size = 32
+text = "150"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Math" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/MaxScores" unique_id=1104178635]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.5372549, 1)
+theme_override_font_sizes/font_size = 32
+text = "150"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ForeignLanguage" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/MaxScores" unique_id=784184412]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.5372549, 1)
+theme_override_font_sizes/font_size = 32
+text = "150"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Physics" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/MaxScores" unique_id=1328892632]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7882353, 1, 0.6745098, 1)
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Chemist" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/MaxScores" unique_id=1144238358]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7882353, 1, 0.6745098, 1)
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Biology" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/MaxScores" unique_id=1006724033]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7882353, 1, 0.6745098, 1)
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="History" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/MaxScores" unique_id=1115737320]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.39113033, 0.6530963, 1)
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Politics" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/MaxScores" unique_id=1945404071]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.39113033, 0.6530963, 1)
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Geography" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/MaxScores" unique_id=526933683]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.39113033, 0.6530963, 1)
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ratings" type="VBoxContainer" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations" unique_id=742961178]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+
+[node name="Chinese" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Ratings" unique_id=974294466]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.5372549, 1)
+theme_override_font_sizes/font_size = 32
+text = "%s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Math" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Ratings" unique_id=1684549783]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.5372549, 1)
+theme_override_font_sizes/font_size = 32
+text = "%s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ForeignLanguage" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Ratings" unique_id=1233201783]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.5372549, 1)
+theme_override_font_sizes/font_size = 32
+text = "%s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Physics" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Ratings" unique_id=13770833]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7882353, 1, 0.6745098, 1)
+theme_override_font_sizes/font_size = 32
+text = "%s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Chemist" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Ratings" unique_id=262592912]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7882353, 1, 0.6745098, 1)
+theme_override_font_sizes/font_size = 32
+text = "%s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Biology" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Ratings" unique_id=1850984013]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7882353, 1, 0.6745098, 1)
+theme_override_font_sizes/font_size = 32
+text = "%s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="History" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Ratings" unique_id=336601587]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.39113033, 0.6530963, 1)
+theme_override_font_sizes/font_size = 32
+text = "%s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Politics" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Ratings" unique_id=1052433306]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.39113033, 0.6530963, 1)
+theme_override_font_sizes/font_size = 32
+text = "%s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Geography" type="Label" parent="CanvasLayer/Control/Content/LatestScore/VBoxContainer/ScoreInformations/Ratings" unique_id=109677441]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.39113033, 0.6530963, 1)
+theme_override_font_sizes/font_size = 32
+text = "%s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/Control/Content/MarginContainer/VFlowContainer/AddScore" to="." method="_on_add_score_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Content/MarginContainer/VFlowContainer/CheckScore" to="." method="_on_check_score_pressed"]

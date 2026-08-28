@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://d1jaf2gtqe788"]
+
+[ext_resource type="Script" uid="uid://dn7ikhktynlp" path="res://scenes/query_score/query_score.gd" id="1_script"]
+[ext_resource type="Theme" uid="uid://w4gr7t2oljrj" path="res://resources/themes/ui.tres" id="1_theme"]
+[ext_resource type="Script" uid="uid://cgo5mf0pok4k8" path="res://scenes/query_score/line_chart.gd" id="2_chart"]
+
+[node name="QueryScore" type="Node2D" unique_id=1747998161]
+script = ExtResource("1_script")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2045336512]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1956416087]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+
+[node name="Margin" type="MarginContainer" parent="CanvasLayer/Control" unique_id=1413195602]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 28
+
+[node name="Main" type="VBoxContainer" parent="CanvasLayer/Control/Margin" unique_id=800094936]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="CanvasLayer/Control/Margin/Main" unique_id=397210686]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 44
+text = "查询成绩"
+
+[node name="Split" type="HBoxContainer" parent="CanvasLayer/Control/Margin/Main" unique_id=1444578620]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 32
+
+[node name="LeftColumn" type="VBoxContainer" parent="CanvasLayer/Control/Margin/Main/Split" unique_id=692188820]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="DateRow" type="HBoxContainer" parent="CanvasLayer/Control/Margin/Main/Split/LeftColumn" unique_id=771067814]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="DateOption" type="OptionButton" parent="CanvasLayer/Control/Margin/Main/Split/LeftColumn/DateRow" unique_id=980475218]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/Margin/Main/Split/LeftColumn" unique_id=1684623179]
+layout_mode = 2
+
+[node name="Scroll" type="ScrollContainer" parent="CanvasLayer/Control/Margin/Main/Split/LeftColumn" unique_id=1416631270]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ResultGrid" type="GridContainer" parent="CanvasLayer/Control/Margin/Main/Split/LeftColumn/Scroll" unique_id=818408780]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="Analysis" type="VBoxContainer" parent="CanvasLayer/Control/Margin/Main/Split" unique_id=96295300]
+custom_minimum_size = Vector2(520, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="AnalysisTitle" type="Label" parent="CanvasLayer/Control/Margin/Main/Split/Analysis" unique_id=483168473]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.53333336, 0.5529412, 1)
+theme_override_font_sizes/font_size = 30
+text = "成绩稳定性分析"
+
+[node name="Slogan" type="Label" parent="CanvasLayer/Control/Margin/Main/Split/Analysis" unique_id=2143879521]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6392157, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "数据见证成长，图表洞察进步"
+
+[node name="ScienceRow" type="HBoxContainer" parent="CanvasLayer/Control/Margin/Main/Split/Analysis" unique_id=1171473333]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ScienceLabel" type="Label" parent="CanvasLayer/Control/Margin/Main/Split/Analysis/ScienceRow" unique_id=903065714]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "科目"
+
+[node name="SubjectOption" type="OptionButton" parent="CanvasLayer/Control/Margin/Main/Split/Analysis/ScienceRow" unique_id=98617423]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StabilityChart" type="Control" parent="CanvasLayer/Control/Margin/Main/Split/Analysis" unique_id=532108416]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 240)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("2_chart")
+
+[node name="StabilityInfo" type="Label" parent="CanvasLayer/Control/Margin/Main/Split/Analysis" unique_id=1351607931]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 22
+
+[node name="HSeparatorBottom" type="HSeparator" parent="CanvasLayer/Control/Margin/Main" unique_id=296488294]
+layout_mode = 2
+
+[node name="Feedback" type="Label" parent="CanvasLayer/Control/Margin/Main" unique_id=1332579832]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+
+[node name="Buttons" type="HBoxContainer" parent="CanvasLayer/Control/Margin/Main" unique_id=1415639944]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="BackButton" type="Button" parent="CanvasLayer/Control/Margin/Main/Buttons" unique_id=1909346166]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+text = "返回"

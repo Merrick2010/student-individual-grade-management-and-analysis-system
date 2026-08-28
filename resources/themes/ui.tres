@@ -1,0 +1,61 @@
+[gd_resource type="Theme" format=3 uid="uid://w4gr7t2oljrj"]
+
+[ext_resource type="FontFile" uid="uid://ll2fixri0aee" path="res://resources/fonts/basic_pixel_zh.ttf" id="1_23gw7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ob46e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ovsr"]
+bg_color = Color(1, 1, 0, 0.54901963)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ob46e"]
+bg_color = Color(0.16078432, 0.16078432, 0.16078432, 0.43137255)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h0e6p"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_23gw7"]
+color = Color(0.40069744, 0.4006978, 0.40069756, 1)
+thickness = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0e6p"]
+bg_color = Color(1, 1, 0, 0.5568628)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[resource]
+Button/font_sizes/font_size = 38
+Button/fonts/font = ExtResource("1_23gw7")
+Button/styles/disabled = SubResource("StyleBoxEmpty_ob46e")
+Button/styles/hover = SubResource("StyleBoxFlat_3ovsr")
+Button/styles/normal = SubResource("StyleBoxFlat_ob46e")
+Button/styles/pressed = SubResource("StyleBoxEmpty_h0e6p")
+ColorPickerButton/fonts/font = ExtResource("1_23gw7")
+HSeparator/styles/separator = SubResource("StyleBoxLine_23gw7")
+Label/font_sizes/font_size = 64
+Label/fonts/font = ExtResource("1_23gw7")
+LineEdit/font_sizes/font_size = 32
+LineEdit/fonts/font = ExtResource("1_23gw7")
+MenuButton/fonts/font = ExtResource("1_23gw7")
+ProgressBar/font_sizes/font_size = 32
+ProgressBar/fonts/font = ExtResource("1_23gw7")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_h0e6p")
+RichTextLabel/font_sizes/bold_font_size = 16
+RichTextLabel/font_sizes/normal_font_size = 48
+RichTextLabel/fonts/normal_font = ExtResource("1_23gw7")
+TabBar/font_sizes/font_size = 64
+TabBar/fonts/font = ExtResource("1_23gw7")
+TextEdit/font_sizes/font_size = 32
+TextEdit/fonts/font = ExtResource("1_23gw7")
+Tree/font_sizes/font_size = 64
+Tree/font_sizes/title_button_font_size = 64
+Tree/fonts/font = ExtResource("1_23gw7")
+Tree/fonts/title_button_font = ExtResource("1_23gw7")

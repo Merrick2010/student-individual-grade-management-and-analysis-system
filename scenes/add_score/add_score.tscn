@@ -1,0 +1,123 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Theme" uid="uid://w4gr7t2oljrj" path="res://resources/themes/ui.tres" id="1_theme"]
+[ext_resource type="Script" path="res://scenes/add_score/add_score.gd" id="1_script"]
+
+[node name="AddScore" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+
+[node name="Margin" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 40
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/Control/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="CanvasLayer/Control/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "添加成绩"
+
+[node name="DateRow" type="HBoxContainer" parent="CanvasLayer/Control/Margin/VBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 12
+
+[node name="YearSpin" type="SpinBox" parent="CanvasLayer/Control/Margin/VBox/DateRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+min_value = 2000.0
+max_value = 2100.0
+
+[node name="YearLabel" type="Label" parent="CanvasLayer/Control/Margin/VBox/DateRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "年"
+
+[node name="MonthSpin" type="SpinBox" parent="CanvasLayer/Control/Margin/VBox/DateRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+min_value = 1.0
+max_value = 12.0
+
+[node name="MonthLabel" type="Label" parent="CanvasLayer/Control/Margin/VBox/DateRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "月"
+
+[node name="DaySpin" type="SpinBox" parent="CanvasLayer/Control/Margin/VBox/DateRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+min_value = 1.0
+max_value = 31.0
+
+[node name="DayLabel" type="Label" parent="CanvasLayer/Control/Margin/VBox/DateRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "日"
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/Margin/VBox"]
+layout_mode = 2
+
+[node name="Scroll" type="ScrollContainer" parent="CanvasLayer/Control/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ScoreGrid" type="GridContainer" parent="CanvasLayer/Control/Margin/VBox/Scroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 3
+
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/Control/Margin/VBox"]
+layout_mode = 2
+
+[node name="Feedback" type="Label" parent="CanvasLayer/Control/Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = ""
+
+[node name="Buttons" type="HBoxContainer" parent="CanvasLayer/Control/Margin/VBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 24
+
+[node name="SaveButton" type="Button" parent="CanvasLayer/Control/Margin/VBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+text = "保存"
+
+[node name="BackButton" type="Button" parent="CanvasLayer/Control/Margin/VBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+text = "返回"
